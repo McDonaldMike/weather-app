@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Weather App</title>
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApuWuU8zo2iT8ExAHbGRJU_1pQkJBt71Q&libraries=places"></script> -->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 	<link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet"> <!-- Google Fonts -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> <!-- Animate CSS CDN -->
 	<link rel="stylesheet" href="css/styles.css">
@@ -16,7 +18,7 @@
 	<div id="app">
 		<h1 id="where" class="animated">Where the heck are ya?</h1>
 		<form class="city-form animated">
-			<input type="text" class="city-input" placeholder="Enter location">
+			<input type="text" class="city-input" id="searchTextField" placeholder="Enter location">
 			<button type="submit" class="get-weather-button">Get Weather!</button>
 		</form>
 		<section class="animated hide main-app">
@@ -35,7 +37,6 @@
 	</div>
 	<!-- End #app-->
 	<p id="credit">By ur friends Mike + Quinn</p>
-
 	<script src="js/weather-app.js"></script>
 	<script src="js/animations.js"></script>
 </body>

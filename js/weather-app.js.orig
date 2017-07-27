@@ -92,7 +92,11 @@
 			} else if (weather.temperature < -20){
 				cityWeather.innerText += `You live on Hoth `
 			}
+<<<<<<< HEAD
 
+=======
+			console.log(weather)
+>>>>>>> origin/icons
 			//Humidity
 			//Summary
 			if (weather.summary === "Clear" || weather.summary === "Partly Cloudy" || weather.summary === "Mostly Cloudy") {
@@ -109,6 +113,7 @@
 				cityWeather.innerText = ``;
 			}
 
+<<<<<<< HEAD
 			//Background color automation
 			var colorObj = {
 				1: '#B4FFA2',
@@ -128,6 +133,8 @@
 			var body = document.querySelector('body');
 
 			body.style.background = colorObj[weather.uvIndex];
+=======
+>>>>>>> origin/icons
 
 		});
 	});
