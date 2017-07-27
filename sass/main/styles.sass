@@ -1,0 +1,55 @@
+@import ../lib/palette.sass
+@import ../lib/mixins.sass
+@import ../lib/_normalize.scss
+
+body
+	width: 100vw
+	font-size: 16px
+	line-height: 1.5
+	background: $light-blue
+	+flex(column, wrap)
+
+	div#app
+		width: 100%
+		text-align: center
+		+centerer
+		font: $bodyfont
+
+		h1
+			font: $headerfont
+			font-size: 6rem
+			margin: 0
+			padding: 0
+			color: $black
+
+		.city-form
+			+flex(row, nowrap)
+			justify-content: center
+			width: 100%
+			margin: 4% auto
+
+			input
+				width: 350px
+				font: $headerfont
+				padding: 0.2em
+				padding-left: 0.6em
+				margin: 0 2%
+				color: $black
+
+				&:focus
+					outline: none
+					border: 1px solid
+
+			button
+				border: none
+				background: $red
+				font: $bodyfont
+				color: white
+				padding: 1% 2%
+
+				&:focus
+					outline: none
+
+				&:hover
+					background: darken($red, 10%)
+					cursor: pointer

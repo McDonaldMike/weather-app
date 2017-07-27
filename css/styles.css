@@ -1,0 +1,55 @@
+/* Coolors Exported Palette - coolors.co/404e5c-008dd5-c6d8d3-e5446d-92dce5 */
+/* HSL */
+/* RGB */
+body {
+  width: 100vw;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #92dce5;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  body div#app {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font: 400 1.2em "rubik", sans-serif; }
+    body div#app h1 {
+      font: 700 2em "rubik", sans-serif;
+      font-size: 6rem;
+      margin: 0;
+      padding: 0;
+      color: #333333; }
+    body div#app .city-form {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      width: 100%;
+      margin: 4% auto; }
+      body div#app .city-form input {
+        width: 350px;
+        font: 700 2em "rubik", sans-serif;
+        padding: 0.2em;
+        padding-left: 0.6em;
+        margin: 0 2%;
+        color: #333333; }
+        body div#app .city-form input:focus {
+          outline: none;
+          border: 1px solid; }
+      body div#app .city-form button {
+        border: none;
+        background: #e5446d;
+        font: 400 1.2em "rubik", sans-serif;
+        color: white;
+        padding: 1% 2%; }
+        body div#app .city-form button:focus {
+          outline: none; }
+        body div#app .city-form button:hover {
+          background: #d81e4d;
+          cursor: pointer; }
+
+/*# sourceMappingURL=styles.css.map */
