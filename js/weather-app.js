@@ -36,16 +36,16 @@
 		cityWeather.innerText = "Checking Weather"
 
 		getCoordinatesForCity(city).then(getCurrentWeather).then(function(weather) {
-
+			console.log(weather)
 			// cityWeather.innerText = "Guess what? ";
 			cityWeather.innerText = "";
 
 			//Temperature
 			if(weather.temperature >= 41) {
 				cityWeather.innerText += `For the love of God stay inside `;
-			}else if (weather.temperature > 30 && weather.temperature <= 40) {
+			}else if (weather.temperature < 40 && weather.temperature >= 30) {
 				cityWeather.innerText += `It's really hot `;
-			} else if (weather.temperature < 29 && weather.temperature >= 25) {
+			} else if (weather.temperature < 30 && weather.temperature >= 25) {
 				cityWeather.innerText += `It's hot `;
 			} else if (weather.temperature < 25 && weather.temperature >= 20) {
 				cityWeather.innerText += `It's kind of hot `;
@@ -71,6 +71,26 @@
 			} else if (weather.summary === "Light Rain") {
 				cityWeather.innerText += ` and it's raining a little.`;
 			}
+
+			//Background color automation
+			var colorObj = {
+				1: '#B4FFA2',
+				2: '#B4FFA2',
+				3: '#FFF09D',
+				4: '#FFF09D',
+				5: '#FFF09D',
+				6: '#FFC3A0',
+				7: '#FFC3A0',
+				8: '#FFC3A0',
+				8: '#FFA09D',
+				9: '#FFA09D',
+			   10: '#FDB0F8',
+			   11: '#FDB0F8'
+			}
+
+			var body = document.querySelector('body');
+
+			body.style.background = colorObj[weather.uvIndex];
 
 		});
 	});

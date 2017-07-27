@@ -8,14 +8,15 @@ body {
   background: #92dce5;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  transition: background 2500ms ease-in-out; }
   body #title {
     position: absolute;
     left: 2%;
     top: 1%;
     font: 700 2em "rubik", sans-serif;
     font-size: 1.5rem;
-    color: #40c2d1;
+    color: rgba(51, 51, 51, 0.2);
     width: 10%; }
   body #credit {
     position: absolute;
@@ -23,7 +24,7 @@ body {
     bottom: 0;
     font: 700 2em "rubik", sans-serif;
     font-size: 0.8rem;
-    color: #40c2d1;
+    color: rgba(51, 51, 51, 0.2);
     width: 20%;
     text-align: right;
     padding: 1em; }
