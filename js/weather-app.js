@@ -28,7 +28,7 @@
 	var cityWeather = app.querySelector('.city-weather');
 	var temp = document.querySelector('.temp');
 	var clouds = app.querySelector('.clouds');
-
+	var icon = app.querySelector('.icon')
 	cityForm.addEventListener('click', function(event) {
 		event.preventDefault(); // prevent the form from submitting
 
@@ -40,12 +40,46 @@
 			// cityWeather.innerText = "Guess what? ";
 			cityWeather.innerText = "";
 
+			//Icons
+
+
+			if(weather.icon === "clear-day"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-15.svg' )
+			}
+			else if(weather.icon === "clear-night"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-05.svg' )
+			}
+			else if(weather.icon === "rain"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-14.svg' )
+			}
+			else if(weather.icon === "snow"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-41.svg' )
+			}
+			else if(weather.icon === "sleet"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-51.svg' )
+			}
+			else if(weather.icon === "wind"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-66.svg' )
+			}
+			else if(weather.icon === "fog"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-39.svg' )
+			}
+			else if(weather.icon === "cloudy"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-16.svg' )
+			}
+			else if(weather.icon === "partly-cloudy-day"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-17.svg' )
+			}
+			else if(weather.icon === "partly-cloudy-night"){
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-18.svg' )
+			}
+			console.log(typeof weather.icon)
 			//Temperature
 			if(weather.temperature >= 41) {
 				cityWeather.innerText += `For the love of God stay inside `;
-			}else if (weather.temperature > 30 && weather.temperature <= 40) {
+			}else if (weather.temperature < 40 && weather.temperature >= 30) {
 				cityWeather.innerText += `It's really hot `;
-			} else if (weather.temperature < 29 && weather.temperature >= 25) {
+			} else if (weather.temperature < 30 && weather.temperature >= 25) {
 				cityWeather.innerText += `It's hot `;
 			} else if (weather.temperature < 25 && weather.temperature >= 20) {
 				cityWeather.innerText += `It's kind of hot `;
