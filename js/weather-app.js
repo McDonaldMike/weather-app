@@ -89,9 +89,14 @@
 				cityWeather.innerText += `It's a little chilly, you probably want a jacket `;
 			} else if (weather.temperature < 10 && weather.temperature >= 0) {
 				cityWeather.innerText += `It's cold `;
-			} else if (weather.temperature < 0) {
+			} else if (weather.temperature < 0 && weather.temperature >= -10) {
 				cityWeather.innerText += `It's literally freezing `;
+			} else if (weather.temperature < -10 && weather.temperature >= -20){
+				cityWeather.innerText += `It's way too cold `
+			} else if (weather.temperature < -20){
+				cityWeather.innerText += `You live on Hoth `
 			}
+			console.log(weather)
 			//Humidity
 			//Summary
 			if (weather.summary === "Clear" || weather.summary === "Partly Cloudy" || weather.summary === "Mostly Cloudy") {
@@ -104,8 +109,18 @@
 				cityWeather.innerText += ` and it's ` + weather.summary.toLowerCase() + "y";
 			} else if (weather.summary === "Light Rain") {
 				cityWeather.innerText += ` and it's raining a little.`;
+			} else {
+				cityWeather.innerText = ``;
 			}
+
 
 		});
 	});
+	function initialize() {
+
+var input = document.getElementById('searchTextField');
+var autocomplete = new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
 })(); //IFFE
