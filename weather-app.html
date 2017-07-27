@@ -6,20 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Weather App</title>
-	<link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet"> <!-- Google Fonts -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> <!-- Animate CSS CDN -->
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+	<h1 id="title">Special Weather App</h1>
 	<div id="app">
-		<h1>Where are you?</h1>
-		<form class="city-form">
+		<h1 id="where" class="animated">Where are you?</h1>
+		<form class="city-form animated">
 			<input type="text" class="city-input">
 			<button type="submit" class="get-weather-button">Get Weather!</button>
 		</form>
-		<section class="main app">
-			<div class="city-weather"></div>
-			<div class="icon"></div>
+		<section class="animated hide main-app">
+			<div class="city-weather">
+				It's cold out and it's calling for rain. Tomorrow should be better.
+			</div>
+			<div class="icon">
+
+			</div>
 			<div class="temp"></div>
 			<div class="clouds"></div>
 			<div class="precip"></div>
@@ -27,7 +33,11 @@
 
 		</section>
 	</div>
+	<!-- End #app-->
+	<p id="credit">By ur friends Mike + Quinn</p>
+
 	<script src="js/weather-app.js"></script>
+	<script src="js/animations.js"></script>
 </body>
 
 </html>

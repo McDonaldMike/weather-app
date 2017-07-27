@@ -9,6 +9,26 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap; }
+  body #title {
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    font: 700 2em "rubik", sans-serif;
+    font-size: 1.5rem;
+    color: #40c2d1;
+    width: 10%; }
+  body #credit {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font: 700 2em "rubik", sans-serif;
+    font-size: 0.8rem;
+    color: #40c2d1;
+    width: 20%;
+    text-align: right;
+    padding: 1em; }
+    body #credit:hover {
+      bottom: 2%; }
   body div#app {
     width: 100%;
     text-align: center;
@@ -17,39 +37,51 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font: 400 1.2em "rubik", sans-serif; }
-    body div#app h1 {
+  body h1#where {
+    font: 700 2em "rubik", sans-serif;
+    font-size: 6rem;
+    margin: 0;
+    padding: 0;
+    color: #333333; }
+  body .city-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    margin: 4% auto; }
+    body .city-form input {
       font: 700 2em "rubik", sans-serif;
-      font-size: 6rem;
-      margin: 0;
-      padding: 0;
-      color: #333333; }
-    body div#app .city-form {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      width: 100%;
-      margin: 4% auto; }
-      body div#app .city-form input {
-        width: 350px;
-        font: 700 2em "rubik", sans-serif;
-        padding: 0.2em;
-        padding-left: 0.6em;
-        margin: 0 2%;
-        color: #333333; }
-        body div#app .city-form input:focus {
-          outline: none;
-          border: 1px solid; }
-      body div#app .city-form button {
-        border: none;
-        background: #e5446d;
-        font: 400 1.2em "rubik", sans-serif;
-        color: white;
-        padding: 1% 2%; }
-        body div#app .city-form button:focus {
-          outline: none; }
-        body div#app .city-form button:hover {
-          background: #d81e4d;
-          cursor: pointer; }
+      padding: 0.2em;
+      padding-left: 0.6em;
+      margin: 0 2%;
+      color: #333333;
+      border: none; }
+      body .city-form input:focus {
+        outline: none;
+        border: 1px solid; }
+    body .city-form button {
+      border: none;
+      background: #e5446d;
+      font: 400 1.2em "rubik", sans-serif;
+      color: white;
+      padding: 1% 2%; }
+      body .city-form button:focus {
+        outline: none; }
+      body .city-form button:hover {
+        background: #d81e4d;
+        cursor: pointer; }
+  body .main-app {
+    width: 80vw;
+    margin: 0 auto; }
+    body .main-app div {
+      font: 700 2em "rubik", sans-serif;
+      font-size: 4rem;
+      color: #333333;
+      text-align: left; }
+
+.hide {
+  display: none !important;
+  visibility: hidden !important; }
 
 /*# sourceMappingURL=styles.css.map */
