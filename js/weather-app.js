@@ -18,7 +18,6 @@
 
 	function getCurrentWeather(coords) {
 		var url = `${CORS_PROXY}${DARKSKY_API_URL}${DARKSKY_API_KEY}/${coords.lat},${coords.lng}?units=si&exclude=minutely,hourly,daily,alerts,flags`;
-		console.log(coords)
 		return (fetch(url).then(response => response.json()).then(data => data.currently));
 	}
 
@@ -36,13 +35,9 @@
 		cityWeather.innerText = "Checking Weather"
 
 		getCoordinatesForCity(city).then(getCurrentWeather).then(function(weather) {
-			console.log(weather)
-			// cityWeather.innerText = "Guess what? ";
 			cityWeather.innerText = "";
 
 			//Icons
-
-
 			if(weather.icon === "clear-day"){
 				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-15.svg' )
 			}
@@ -73,7 +68,8 @@
 			else if(weather.icon === "partly-cloudy-night"){
 				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-18.svg' )
 			}
-			console.log(typeof weather.icon)
+
+
 			//Temperature
 			if(weather.temperature >= 41) {
 				cityWeather.innerText += `For the love of God stay inside `;
@@ -92,6 +88,7 @@
 			} else if (weather.temperature < 0) {
 				cityWeather.innerText += `It's literally freezing `;
 			}
+
 			//Humidity
 			//Summary
 			if (weather.summary === "Clear" || weather.summary === "Partly Cloudy" || weather.summary === "Mostly Cloudy") {

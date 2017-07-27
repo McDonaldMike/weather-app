@@ -82,6 +82,11 @@ body {
       font-size: 4rem;
       color: #333333;
       text-align: left; }
+    body .main-app .city-weather::after {
+      display: block;
+      content: url("../../palette.pdf");
+      width: 50px;
+      height: 25px; }
 
 .hide {
   display: none !important;
