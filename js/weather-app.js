@@ -19,7 +19,7 @@ function getCoordinatesForCity(cityName) {
 
 function getCurrentWeather(coords) {
   var url = `${CORS_PROXY}${DARKSKY_API_URL}${DARKSKY_API_KEY}/${coords.lat},${coords.lng}?units=si&exclude=minutely,hourly,daily,alerts,flags`;
-
+console.log(coords)
   return (
     fetch(url)
     .then(response => response.json())
@@ -32,7 +32,7 @@ var cityForm = app.querySelector('.city-form');
 var cityInput = cityForm.querySelector('.city-input');
 var cityWeather = app.querySelector('.city-weather');
 var temp = document.querySelector('.temp');
-
+var clouds = app.querySelector('.clouds');
 cityForm.addEventListener('submit', function(event) {
   event.preventDefault(); // prevent the form from submitting
 
@@ -44,28 +44,52 @@ cityForm.addEventListener('submit', function(event) {
   .then(function(weather) {
     console.log(weather)
     console.log(typeof weather.temperature)
+
+    //Temperature
     if(weather.temperature >= 30){
-    temp.innerText = `It's really hot.`
+    temp.innerText = `It's really hot,`
   }
     else if(weather.temperature<29 && weather.temperature>=25){
-      temp.innerText = `It's hot.`
+      temp.innerText = `It's hot,`
     }
     else if(weather.temperature<25 && weather.temperature>=20){
-      temp.innerText = `It's kind of hot.`
+      temp.innerText = `It's kind of hot,`
     }
     else if(weather.temperature<20 && weather.temperature>=15){
-      temp.innerText = `It's warm.`
+      temp.innerText = `It's warm,`
     }
     else if(weather.temperature<15 && weather.temperature>=10){
-      temp.innerText = `It's a little chilly.`
+      temp.innerText = `It's a little chilly,`
     }
     else if(weather.temperature<10 && weather.temperature>=0){
-      temp.innerText = `It's cold.`
+      temp.innerText = `It's cold,`
     }
     else if(weather.temperature<0){
-      temp.innerText = `It's cold.`
+      temp.innerText = `It's cold,`
     }
-    cityWeather.innerText = "hello";
+    //Humidity
+    //Summary
+    if(weather.summary === "Clear" || weather.summary === "Partly Cloudy" || weather.summary === "Mostly Cloudy"){
+      clouds.innerText = `and the skies are ` + weather.summary.toLowerCase()
+    }
+    else if (weather.summary === "Rain" || weather.summary === "Snow"){
+      clouds.innerText = `and it's ` + weather.summary.toLowerCase() + "ing"
+    }
+    else if (weather.summary === "Overcast" || weather.summary === "Dry"){
+      clouds.innerText = `and it's ` + weather.summary.toLowerCase()
+    }
+    else if (weather.summary === "Drizzle"){
+      clouds.innerText = `and it's ` + weather.summary.toLowerCase() + "y"
+    }
+
+    else if (weather.summary === "Light Rain"){
+      clouds.innerText = `and it's raining a little.`
+    }
+
+
+
+    cityWeather.innerText = "Guess what?";
+
   });
 });
 })(); //IFFE
