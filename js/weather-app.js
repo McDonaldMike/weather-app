@@ -6,6 +6,32 @@
 	var GOOGLE_MAPS_API_KEY = 'AIzaSyApuWuU8zo2iT8ExAHbGRJU_1pQkJBt71Q';
 	var GOOGLE_MAPS_API_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
 
+
+
+	//geolocation data test
+	function success(e) {
+		var lat = e.coords.latitude;
+		var lng = e.coords.longitude;
+		var userPos = {
+			lat: lat,
+			lng: lng
+		}
+
+		let url = `http://maps.googleapis.com/maps/api/geocode/json?latlng=${userPos.lat},${userPos.lng}&sensor=true`
+		fetch(url)
+			.then(resp => resp.json())
+			.then(resp => resp.results[0].formatted_address)
+			.then(resp => {
+				document.getElementById('searchTextField').value = resp;
+			})
+	};
+
+	function error(e) {console.log('error', e)}
+
+	navigator.geolocation.getCurrentPosition(success, error, {timeout: 20000});
+
+
+
 	// This function returns a promise that will resolve with an object of lat/lng coordinates
 	function getCoordinatesForCity(cityName) {
 		var url = `${GOOGLE_MAPS_API_URL}?address=${cityName}&key=${GOOGLE_MAPS_API_KEY}`;
@@ -17,6 +43,7 @@
 	}
 
 	function getCurrentWeather(coords) {
+		console.log(coords, 'this is coords')
 		var url = `${CORS_PROXY}${DARKSKY_API_URL}${DARKSKY_API_KEY}/${coords.lat},${coords.lng}?units=si&exclude=minutely,hourly,daily,alerts,flags`;
 		return (fetch(url).then(response => response.json()).then(data => data.currently));
 	}
@@ -27,7 +54,7 @@
 	var cityWeather = app.querySelector('.city-weather');
 	var temp = document.querySelector('.temp');
 	var clouds = app.querySelector('.clouds');
-	var icon = app.querySelector('.icon')
+	var icon = document.querySelector('.icon')
 	cityForm.addEventListener('click', function(event) {
 		event.preventDefault(); // prevent the form from submitting
 
@@ -39,25 +66,25 @@
 
 			//Icons
 			if (weather.icon === "clear-day") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-15.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-15.svg')
 			} else if (weather.icon === "clear-night") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-05.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-05.svg')
 			} else if (weather.icon === "rain") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-14.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-14.svg')
 			} else if (weather.icon === "snow") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-41.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-41.svg')
 			} else if (weather.icon === "sleet") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-51.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-51.svg')
 			} else if (weather.icon === "wind") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-66.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-66.svg')
 			} else if (weather.icon === "fog") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-39.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-39.svg')
 			} else if (weather.icon === "cloudy") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-16.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-16.svg')
 			} else if (weather.icon === "partly-cloudy-day") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-17.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-17.svg')
 			} else if (weather.icon === "partly-cloudy-night") {
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-18.svg')
+				icon.setAttribute('src', 'assets/SVG/weather_icons-18.svg')
 			}
 
 			//Temperature

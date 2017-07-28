@@ -95,12 +95,17 @@ body
 			color: $black
 			text-align: left
 
-		.city-weather
-			&::after
-				display: block
-				content: url('../../palette.pdf')
-				width: 50px
-				height: 25px
+.icon
+	position: absolute
+	top: 2%
+	right: 1%
+	width: 100px
+	background: $black-20
+	padding: 1%
+
+	display: none
+
+
 
 //Google Autocomplete Styles
 .pac-container
@@ -127,7 +132,7 @@ body
 
 		span.pac-icon-marker
 			display: none !important
-			
+
 
 //Utility Styles
 

@@ -82,11 +82,15 @@ body {
       font-size: 4rem;
       color: #333333;
       text-align: left; }
-    body .main-app .city-weather::after {
-      display: block;
-      content: url("../../palette.pdf");
-      width: 50px;
-      height: 25px; }
+
+.icon {
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  width: 100px;
+  background: rgba(51, 51, 51, 0.2);
+  padding: 1%;
+  display: none; }
 
 .pac-container:after {
   display: none;
