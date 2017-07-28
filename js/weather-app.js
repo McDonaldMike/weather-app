@@ -38,42 +38,32 @@
 			cityWeather.innerText = "";
 
 			//Icons
-			if(weather.icon === "clear-day"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-15.svg' )
+			if (weather.icon === "clear-day") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-15.svg')
+			} else if (weather.icon === "clear-night") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-05.svg')
+			} else if (weather.icon === "rain") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-14.svg')
+			} else if (weather.icon === "snow") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-41.svg')
+			} else if (weather.icon === "sleet") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-51.svg')
+			} else if (weather.icon === "wind") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-66.svg')
+			} else if (weather.icon === "fog") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-39.svg')
+			} else if (weather.icon === "cloudy") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-16.svg')
+			} else if (weather.icon === "partly-cloudy-day") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-17.svg')
+			} else if (weather.icon === "partly-cloudy-night") {
+				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-18.svg')
 			}
-			else if(weather.icon === "clear-night"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-05.svg' )
-			}
-			else if(weather.icon === "rain"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-14.svg' )
-			}
-			else if(weather.icon === "snow"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-41.svg' )
-			}
-			else if(weather.icon === "sleet"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-51.svg' )
-			}
-			else if(weather.icon === "wind"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-66.svg' )
-			}
-			else if(weather.icon === "fog"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-39.svg' )
-			}
-			else if(weather.icon === "cloudy"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-16.svg' )
-			}
-			else if(weather.icon === "partly-cloudy-day"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-17.svg' )
-			}
-			else if(weather.icon === "partly-cloudy-night"){
-				icon.setAttribute('src', 'rns-weather-icons/SVG/weather_icons-18.svg' )
-			}
-
 
 			//Temperature
-			if(weather.temperature >= 41) {
+			if (weather.temperature >= 41) {
 				cityWeather.innerText += `For the love of God stay inside `;
-			}else if (weather.temperature < 40 && weather.temperature >= 30) {
+			} else if (weather.temperature < 40 && weather.temperature >= 30) {
 				cityWeather.innerText += `It's really hot `;
 			} else if (weather.temperature < 30 && weather.temperature >= 25) {
 				cityWeather.innerText += `It's hot `;
@@ -87,9 +77,9 @@
 				cityWeather.innerText += `It's cold `;
 			} else if (weather.temperature < 0 && weather.temperature >= -10) {
 				cityWeather.innerText += `It's literally freezing `;
-			} else if (weather.temperature < -10 && weather.temperature >= -20){
+			} else if (weather.temperature < -10 && weather.temperature >= -20) {
 				cityWeather.innerText += `It's way too cold `
-			} else if (weather.temperature < -20){
+			} else if (weather.temperature < -20) {
 				cityWeather.innerText += `You live on Hoth `
 			}
 
@@ -121,8 +111,8 @@
 				8: '#FFC3A0',
 				8: '#FFA09D',
 				9: '#FFA09D',
-			   10: '#FDB0F8',
-			   11: '#FDB0F8'
+				10: '#FDB0F8',
+				11: '#FDB0F8'
 			}
 
 			var body = document.querySelector('body');
@@ -133,9 +123,9 @@
 	});
 	function initialize() {
 
-var input = document.getElementById('searchTextField');
-var autocomplete = new google.maps.places.Autocomplete(input);
-}
+		var input = document.getElementById('searchTextField');
+		var autocomplete = new google.maps.places.Autocomplete(input);
+	}
 
-google.maps.event.addDomListener(window, 'load', initialize);
+	google.maps.event.addDomListener(window, 'load', initialize);
 })(); //IFFE

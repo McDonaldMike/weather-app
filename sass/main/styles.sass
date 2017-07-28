@@ -102,6 +102,35 @@ body
 				width: 50px
 				height: 25px
 
+//Google Autocomplete Styles
+.pac-container
+	&:after
+		display: none
+		content: ""
+		padding: 0
+		margin: 0
+		background: none !important
+
+	.pac-item
+
+		.pac-item-query
+			font: $headerfont
+			font-size: 1.8em
+			margin-left: 20px
+			line-height: 60px
+
+			.pac-matched
+				font-size: 1em
+
+		span:last-of-type
+			font-size: 2em
+
+		span.pac-icon-marker
+			display: none !important
+			
+
+//Utility Styles
+
 .hide
 	display: none !important
 	visibility: hidden !important

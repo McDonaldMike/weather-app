@@ -88,6 +88,24 @@ body {
       width: 50px;
       height: 25px; }
 
+.pac-container:after {
+  display: none;
+  content: "";
+  padding: 0;
+  margin: 0;
+  background: none !important; }
+.pac-container .pac-item .pac-item-query {
+  font: 700 2em "rubik", sans-serif;
+  font-size: 1.8em;
+  margin-left: 20px;
+  line-height: 60px; }
+  .pac-container .pac-item .pac-item-query .pac-matched {
+    font-size: 1em; }
+.pac-container .pac-item span:last-of-type {
+  font-size: 2em; }
+.pac-container .pac-item span.pac-icon-marker {
+  display: none !important; }
+
 .hide {
   display: none !important;
   visibility: hidden !important; }
