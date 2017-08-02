@@ -10,6 +10,7 @@
 
 	//geolocation data test
 	function success(e) {
+		console.log('success call')
 		var lat = e.coords.latitude;
 		var lng = e.coords.longitude;
 		var userPos = {
@@ -17,18 +18,25 @@
 			lng: lng
 		}
 
+		document.getElementById('searchTextField').value = 'Getting location Data...'
+
 		let url = `http://maps.googleapis.com/maps/api/geocode/json?latlng=${userPos.lat},${userPos.lng}&sensor=true`
+		console.log(url)
 		fetch(url)
 			.then(resp => resp.json())
-			.then(resp => resp.results[0].formatted_address)
+			.then(resp => resp.results[4].formatted_address)
 			.then(resp => {
+				console.log('finished api')
 				document.getElementById('searchTextField').value = resp;
 			})
 	};
 
-	function error(e) {console.log('error', e)}
+	function error(e) {console.log('WOW LOL', e)}
 
-	navigator.geolocation.getCurrentPosition(success, error, {timeout: 20000});
+	navigator.geolocation.getCurrentPosition(success, error, {
+		timeout: 20000,
+		maximumAge: 60000000
+	});
 
 
 
@@ -55,6 +63,7 @@
 	var temp = document.querySelector('.temp');
 	var clouds = app.querySelector('.clouds');
 	var icon = document.querySelector('.icon')
+	var button = cityForm.querySelector('get-weather-button') //added this to fix click issue
 	cityForm.addEventListener('click', function(event) {
 		event.preventDefault(); // prevent the form from submitting
 

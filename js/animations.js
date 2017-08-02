@@ -7,6 +7,7 @@
 	var header = app.querySelector('h1')
 	var button = cityForm.querySelector('.get-weather-button');
 	var main = app.querySelector('.main-app');
+	var icon = document.querySelector('.icon');
 
 	button.addEventListener('click', function(e) {
 		console.log("wapwapwap")
@@ -23,6 +24,9 @@
 		setTimeout(function() {
 			main.classList.remove('hide');
 			main.classList.add('fadeIn');
+
+			icon.classList.remove('hide');
+			icon.classList.add('fadeIn');
 		}, 1000)
 	})
 
