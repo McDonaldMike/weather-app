@@ -23,12 +23,13 @@
 
 	var app = document.querySelector('#app');
 	var cityForm = app.querySelector('.city-form');
+	var button = app.querySelector('.get-weather-button')
 	var cityInput = cityForm.querySelector('.city-input');
 	var cityWeather = app.querySelector('.city-weather');
 	var temp = document.querySelector('.temp');
 	var clouds = app.querySelector('.clouds');
 	var icon = app.querySelector('.icon')
-	cityForm.addEventListener('click', function(event) {
+	button.addEventListener('click', function(event) {
 		event.preventDefault(); // prevent the form from submitting
 
 		var city = cityInput.value;
